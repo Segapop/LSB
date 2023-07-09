@@ -1,5 +1,6 @@
 package com.lsb;
 
+import com.lsb.entity.entities.EntityMoissanite;
 import com.lsb.entity.entities.EntityTest;
 import com.lsb.init.AddonAbilities;
 import com.lsb.init.AddonEntities;
@@ -46,6 +47,7 @@ public class lsb
         //register entity attributes, these are set in the EntityTestGem class
         event.put(AddonEntities.TEST.get(), EntityTest.registerAttributes().build());
         event.put(AddonEntities.VARYTEST.get(), EntityVaryingTest.registerAttributes().build());
+        event.put(AddonEntities.MOISSANITE.get(), EntityMoissanite.registerAttributes().build());
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

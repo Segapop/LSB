@@ -11,5 +11,6 @@ public class AddonAbilities {
         ModAbilities.abilities.add(new IdleAbility());
         ModAbilities.abilities.add(new MeleeAbility());
         ModAbilities.abilities.add(new MixedAbility());
+        ModAbilities.abilities.add(new SupervisorAbility());
     }
 }

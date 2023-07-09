@@ -1,6 +1,7 @@
 package com.lsb.client;
 
 import com.lsb.client.entity.model.ModelMoissanite;
+import com.lsb.client.entity.render.RenderLsbMoissanite;
 import com.lsb.client.entity.render.RenderVaryTest;
 import com.lsb.lsb;
 import com.lsb.client.entity.model.ModelTest;
@@ -24,6 +25,7 @@ public class ClientProxy {
 
         @SubscribeEvent
         public static void onClientSetup(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerEntityRenderer(AddonEntities.MOISSANITE.get(), m -> new RenderLsbMoissanite(m, new ModelMoissanite<>(m.bakeLayer(ModelMoissanite.LAYER_LOCATION))));
             event.registerEntityRenderer(AddonEntities.VARYTEST.get(), m -> new RenderVaryTest(m, new ModelVaryTest<>(m.bakeLayer(ModelVaryTest.LAYER_LOCATION))));
             event.registerEntityRenderer(AddonEntities.TEST.get(), m -> new RenderTest(m, new ModelTest<>(m.bakeLayer(ModelMoissanite.LAYER_LOCATION))));
         }
@@ -38,6 +40,7 @@ public class ClientProxy {
             //register layers here
             event.registerLayerDefinition(ModelVaryTest.LAYER_LOCATION, ModelVaryTest::createBodyLayer);
             event.registerLayerDefinition(ModelTest.LAYER_LOCATION, ModelTest::createBodyLayer);
+            event.registerLayerDefinition(ModelMoissanite.LAYER_LOCATION, ModelMoissanite::createBodyLayer);
         }
 
         @SubscribeEvent

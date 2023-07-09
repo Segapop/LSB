@@ -63,4 +63,19 @@ public class AddonCruxes {
         gemCruxes.add(new Crux(Blocks.GOLD_BLOCK.defaultBlockState(), 16, CruxType.INORGANIC, gemTemperatureMin, gemTemperatureMax));
         return new GemConditions(gemCruxes, essences, primer, gemTemperatureMin, gemTemperatureMax, 4);
     }
+    public static GemConditions MOISSANITE_CONDITIONS() {
+        ArrayList<Crux> gemCruxes = new ArrayList<>();
+        float gemTemperatureMin = 1.0f;
+        float gemTemperatureMax = 2.0f;
+        Item primer = Items.NETHER_STAR;
+        String essences = "white";
+        gemCruxes.add(new Crux(Blocks.SOUL_SAND.defaultBlockState(), 9, CruxType.ORGANIC, gemTemperatureMin, gemTemperatureMax));
+        gemCruxes.add(new Crux(Blocks.SOUL_SOIL.defaultBlockState(), 9, CruxType.ORGANIC, gemTemperatureMin, gemTemperatureMax));
+        gemCruxes.add(new Crux(Blocks.BASALT.defaultBlockState(), 9, CruxType.ORGANIC, gemTemperatureMin, gemTemperatureMax));
+        gemCruxes.add(new Crux(Blocks.STONE.defaultBlockState(), 2, CruxType.INORGANIC, gemTemperatureMin, gemTemperatureMax));
+        gemCruxes.add(new Crux(Blocks.GRANITE.defaultBlockState(), 2, CruxType.INORGANIC, gemTemperatureMin, gemTemperatureMax));
+        gemCruxes.add(new Crux(Blocks.DIORITE.defaultBlockState(), 2, CruxType.INORGANIC, gemTemperatureMin, gemTemperatureMax));
+        gemCruxes.add(new Crux(Blocks.SAND.defaultBlockState(), 2, CruxType.INORGANIC, gemTemperatureMin, gemTemperatureMax));
+        return new GemConditions(gemCruxes, essences, primer, 2, gemTemperatureMin, gemTemperatureMax);
+    }
 }

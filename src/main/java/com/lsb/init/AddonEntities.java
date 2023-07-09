@@ -1,11 +1,11 @@
 package com.lsb.init;
 
+import com.lsb.entity.entities.EntityMoissanite;
 import com.lsb.entity.entities.EntityTest;
 import com.lsb.entity.entities.EntityVaryingTest;
 import com.lsb.lsb;
 import com.gempire.Gempire;
 import com.gempire.init.AddonHandler;
-import com.gempire.init.ModEntities;
 import com.gempire.systems.injection.GemConditions;
 import com.gempire.systems.injection.GemFormation;
 import net.minecraft.resources.ResourceLocation;
@@ -32,21 +32,29 @@ public class AddonEntities {
                     .sized(.95f, 1.8f)
                     .build(new ResourceLocation(lsb.MODID, "varytest").toString()));
 
+    public static final RegistryObject<EntityType<EntityMoissanite>> MOISSANITE = ENTITIES.register("moissanite",
+            () -> EntityType.Builder.of(EntityMoissanite::new, MobCategory.CREATURE)
+                    .sized(.85f, 2f)
+                    .build(new ResourceLocation(lsb.MODID, "moissanite").toString()));
+
     public static void registerCruxes() {
         //register cruxes
         AddonEntities.CRUXTOGEM.put("test", AddonCruxes.TEST_CONDITIONS());
         AddonEntities.CRUXTOGEM.put("varytest", AddonCruxes.VARYTEST_CONDITIONS());
+        AddonEntities.CRUXTOGEM.put("moissanite", AddonCruxes.MOISSANITE_CONDITIONS());
         //possible to be injected with tier one (can be both)
         GemFormation.POSSIBLE_GEMS_TIER_1.add("test");
         //possible to be injected with tier two (can be both)
         GemFormation.POSSIBLE_GEMS_TIER_2.add("test");
         GemFormation.POSSIBLE_GEMS_TIER_2.add("varytest");
+        GemFormation.POSSIBLE_GEMS_TIER_2.add("moissanite");
     }
 
     public static void setAddonGems(){
         //registers entity as a gem
         AddonHandler.ENTITY_ADDON_ENTITY_REGISTRIES.put("test", AddonEntities.class);
         AddonHandler.ENTITY_ADDON_ENTITY_REGISTRIES.put("varytest", AddonEntities.class);
+        AddonHandler.ENTITY_ADDON_ENTITY_REGISTRIES.put("moissanite", AddonEntities.class);
 
         AddonHandler.ADDON_ENTITY_REGISTRIES.put("lsb", AddonEntities.class);
     }
