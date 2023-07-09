@@ -1,0 +1,17 @@
+{
+  "item.lsb.varytest_gem_0": "White VaryTest Gem",
+  "item.lsb.varytest_gem_4": "Yellow VaryTest Gem",
+  "item.lsb.varytest_gem_6": "Pink VaryTest Gem",
+  "item.lsb.varytest_gem_11": "Blue VaryTest Gem",
+  "item.lsb.test_gem": "Test Gem",
+
+  "entity.gempire.varytest": "VaryTest",
+  "entity.gempire.test": "Test",
+
+  "ability.lsb.attribute_test": "Attribute Test",
+  "ability.lsb.crafting_test": "Crafting Test",
+  "ability.lsb.effect_test": "Effect Test",
+  "ability.lsb.melee_test": "Melee Test",
+  "ability.lsb.idle_test": "Idle Test",
+  "ability.lsb.mixed_test": "Mixed Test"
+}
