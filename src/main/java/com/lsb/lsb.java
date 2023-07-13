@@ -1,10 +1,8 @@
 package com.lsb;
 
-import com.lsb.entity.entities.EntityMoissanite;
-import com.lsb.entity.entities.EntityTest;
+import com.lsb.entity.entities.*;
 import com.lsb.init.AddonAbilities;
 import com.lsb.init.AddonEntities;
-import com.lsb.entity.entities.EntityVaryingTest;
 import com.lsb.init.RegistryHandler;
 import com.gempire.init.EventHandler;
 import com.mojang.logging.LogUtils;
@@ -45,9 +43,17 @@ public class lsb
 
     public void EntityAttributes(final EntityAttributeCreationEvent event) {
         //register entity attributes, these are set in the EntityTestGem class
-        event.put(AddonEntities.TEST.get(), EntityTest.registerAttributes().build());
-        event.put(AddonEntities.VARYTEST.get(), EntityVaryingTest.registerAttributes().build());
-        event.put(AddonEntities.MOISSANITE.get(), EntityMoissanite.registerAttributes().build());
+        event.put(AddonEntities.SBMOISSANITE.get(), EntitySbMoissanite.registerAttributes().build());
+        event.put(AddonEntities.SBOPAL.get(), EntitySbOpal.registerAttributes().build());
+        event.put(AddonEntities.SBJADE.get(), EntitySbJade.registerAttributes().build());
+        event.put(AddonEntities.SBMOONSTONE.get(), EntitySbMoonstone.registerAttributes().build());
+        event.put(AddonEntities.SBGOLD.get(), EntitySbGold.registerAttributes().build());
+        event.put(AddonEntities.SBPYRITE.get(), EntitySbPyrite.registerAttributes().build());
+        event.put(AddonEntities.SBPLATINUM.get(), EntitySbPlatinum.registerAttributes().build());
+        event.put(AddonEntities.SBCOPPER.get(), EntitySbCopper.registerAttributes().build());
+        event.put(AddonEntities.SBSILVER.get(), EntitySbSilver.registerAttributes().build());
+        event.put(AddonEntities.SBJEREMEJEVITE.get(), EntitySbJeremejevite.registerAttributes().build());
+        event.put(AddonEntities.SBZIRCONIA.get(), EntitySbZirconia.registerAttributes().build());
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

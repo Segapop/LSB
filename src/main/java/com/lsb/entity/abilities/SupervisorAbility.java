@@ -22,7 +22,7 @@ public class SupervisorAbility extends Ability implements IIdleAbility {
 
     @Override
     public void execute() {
-        // write what you want the ability to do
+        // tells player world decay status
 
     }
 }

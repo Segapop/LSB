@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "lsb:item/varytest_gem_4",
-    "layer1": "gempire:item/sludge/round_gem_sludge"
-  }
-}
