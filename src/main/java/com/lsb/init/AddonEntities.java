@@ -123,6 +123,5 @@ public class AddonEntities {
         AddonHandler.ENTITY_ADDON_ENTITY_REGISTRIES.put("sbjeremejevite", AddonEntities.class);
         AddonHandler.ENTITY_ADDON_ENTITY_REGISTRIES.put("sbzirconia", AddonEntities.class);
 
-        AddonHandler.ADDON_ENTITY_REGISTRIES.put("lsb", AddonEntities.class);
     }
 }

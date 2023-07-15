@@ -2,7 +2,6 @@ package com.lsb.client.entity.render;
 
 import com.gempire.client.entity.render.layers.*;
 import com.lsb.client.entity.model.ModelSbOpal;
-import com.lsb.client.entity.render.layers.LipstickLayer;
 import com.lsb.entity.entities.EntitySbOpal;
 import com.lsb.lsb;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -20,6 +19,7 @@ public class RenderSbOpal extends MobRenderer<EntitySbOpal, ModelSbOpal<EntitySb
         this.addLayer(new SkinLayer(this));
         this.addLayer(new FaceLayer(this));
         this.addLayer(new MarkingLayer(this));
+        this.addLayer(new WingLayer(this));
         this.addLayer(new OutfitLayer(this));
         this.addLayer(new InsigniaLayer(this));
         this.addLayer(new HairLayer(this));

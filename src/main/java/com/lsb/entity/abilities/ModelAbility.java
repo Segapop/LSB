@@ -22,7 +22,7 @@ public class ModelAbility extends Ability implements IIdleAbility {
 
     @Override
     public void execute() {
-        // either absolutely nothing, or she'll passively calm gems down, maybe only if she's assigned to them
+        // either absolutely nothing, or she'll passively calm gems down, maybe only if she's assigned to them, if wandering, she'll go to gems and dye their colors to match hers
 
     }
 }

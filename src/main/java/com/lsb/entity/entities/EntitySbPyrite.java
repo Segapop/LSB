@@ -1,5 +1,6 @@
 package com.lsb.entity.entities;
 
+import com.lsb.entity.abilities.BackupSingerAbility;
 import com.lsb.lsb;
 import com.lsb.init.AddonItems;
 import com.gempire.entities.abilities.*;
@@ -36,8 +37,8 @@ public class EntitySbPyrite extends EntityGem {
     public static AttributeSupplier.Builder registerAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 30.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.4D)
-                .add(Attributes.ATTACK_DAMAGE, 3.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.3D)
+                .add(Attributes.ATTACK_DAMAGE, 2.0D)
                 .add(Attributes.ATTACK_SPEED, 1.0D);
     }
 
@@ -64,17 +65,17 @@ public class EntitySbPyrite extends EntityGem {
 
     @Override
     public Float baseXScale() {
-        return .8F;
+        return .6F;
     }
 
     @Override
     public Float baseYScale() {
-        return .85F;
+        return .65F;
     }
 
     @Override
     public Float baseZScale() {
-        return .8F;
+        return .6F;
     }
 
     @Override
@@ -109,55 +110,61 @@ public class EntitySbPyrite extends EntityGem {
                 GemPlacements.TOP_OF_HEAD, GemPlacements.FOREHEAD, GemPlacements.BACK_OF_HEAD, GemPlacements.LEFT_EYE, GemPlacements.RIGHT_EYE, GemPlacements.NOSE,
                 GemPlacements.LEFT_CHEEK, GemPlacements.RIGHT_CHEEK, GemPlacements.LEFT_EAR, GemPlacements.RIGHT_EAR, GemPlacements.CHEST, GemPlacements.BACK, GemPlacements.BELLY,
                 GemPlacements.LEFT_SHOULDER, GemPlacements.RIGHT_SHOULDER, GemPlacements.LEFT_HAND, GemPlacements.RIGHT_HAND, GemPlacements.LEFT_PALM, GemPlacements.RIGHT_PALM,
-                GemPlacements.LEFT_THIGH, GemPlacements.RIGHT_THIGH, GemPlacements.LEFT_ANKLE, GemPlacements.RIGHT_ANKLE
         };
     }
 
     @Override
     public SoundEvent getInstrument()
     {
-        return SoundEvents.NOTE_BLOCK_GUITAR.get();
+        return SoundEvents.NOTE_BLOCK_CHIME.get();
     }
     @Override
     public int generateHairVariant() {
-        return this.random.nextInt(3);
+        return this.random.nextInt(4);
     }
 
     @Override
     public int generateInsigniaColor() {
-        return 14;
+        return 0;
     }
 
     @Override
     public int generateOutfitColor() {
-        return 14;
+        return 4;
     }
 
     @Override
     public boolean hasOutfitPlacementVariant() {
+        return false;
+    }
+
+    @Override
+    public boolean hasMarkings() {
         return true;
+    }
+
+    @Override
+    public int maxMarkings() {
+        return 1;
     }
 
     @Override
     public int[] outfitPlacementVariants() {
         return new int[]{
-                11, 17
         };
     }
 
     public ArrayList<Ability> possibleAbilities(){
         ArrayList<Ability> arrayList = new ArrayList<>();
         arrayList.add(new AbilityZilch());
-        arrayList.add(new AbilityTank());
-        arrayList.add(new AbilityBeefcake());
         arrayList.add(new AbilityPowerhouse());
         arrayList.add(new AbilityUnhinged());
         arrayList.add(new AbilityKnockback());
-        arrayList.add(new AbilityArcher());
         return arrayList;
     }
     public ArrayList<Ability> definiteAbilities(){
         ArrayList<Ability> arrayList = new ArrayList<>();
+        arrayList.add(new BackupSingerAbility());
         return arrayList;
     }
 
@@ -185,39 +192,25 @@ public class EntitySbPyrite extends EntityGem {
 
     @Override
     public boolean fireImmune(){
-        return true;
+        return false;
     }
 
     public boolean hasSkinColorVariant(){
         return false;
     }
 
+    @Override
     public int generateOutfitVariant() {
-        if (getGemPlacement() == 11)
-            return 11;
-        else if (getGemPlacement() == 17)
-            return 17;
-        return this.random.nextInt(7);
+        return this.random.nextInt(1);
     }
 
-    public int generateInsigniaVariant(){
-        if (this.getGemPlacement() == 11) {
-            return this.getGemPlacement() != 11 ? this.getOutfitVariant() : 11;
-        } else if (this.getGemPlacement() == 17) {
-            return this.getGemPlacement() != 17 ? this.getOutfitVariant() : 17;
-        } else {
-            return this.getOutfitVariant();
-        }
+    @Override
+    public int generateInsigniaVariant() {
+        return this.getOutfitVariant();
     }
 
-    public int generateRebelInsigniaVariant(){
-        if (this.getGemPlacement() == 11) {
-            return this.getGemPlacement() != 11 ? this.getRebelOutfitVariant() : 11;
-        } else if (this.getGemPlacement() == 17) {
-            return this.getGemPlacement() != 17 ? this.getRebelOutfitVariant() : 17;
-        } else {
-            return this.getRebelOutfitVariant();
-        }
+    public int generateRebelInsigniaVariant() {
+        return this.getRebelOutfitVariant();
     }
 
     @Override
@@ -229,18 +222,18 @@ public class EntitySbPyrite extends EntityGem {
 
     @Override
     public int baseFocus() {
-        return 7;
+        return 3;
     }
 
     public int generateHardness() {
-        return 9;
+        return 6;
     }
 
 
 
     @Override
     public int getColor() {
-        return 14;
+        return 4;
     }
 
     @Override

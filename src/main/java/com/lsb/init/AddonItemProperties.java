@@ -23,22 +23,22 @@ public class AddonItemProperties {
         ModItemProperties.makeGem(AddonItems.RED_SBMOISSANITE_GEM.get());
         ModItemProperties.makeGem(AddonItems.BLACK_SBMOISSANITE_GEM.get());
         //Opal
-        ModItemProperties.makeGem(AddonItems.WHITE_SBOPAL_GEM.get());
-        ModItemProperties.makeGem(AddonItems.ORANGE_SBOPAL_GEM.get());
-        ModItemProperties.makeGem(AddonItems.MAGENTA_SBOPAL_GEM.get());
-        ModItemProperties.makeGem(AddonItems.LIGHT_BLUE_SBOPAL_GEM.get());
-        ModItemProperties.makeGem(AddonItems.YELLOW_SBOPAL_GEM.get());
-        ModItemProperties.makeGem(AddonItems.LIME_SBOPAL_GEM.get());
-        ModItemProperties.makeGem(AddonItems.PINK_SBOPAL_GEM.get());
-        ModItemProperties.makeGem(AddonItems.GRAY_SBOPAL_GEM.get());
-        ModItemProperties.makeGem(AddonItems.LIGHT_GRAY_SBOPAL_GEM.get());
-        ModItemProperties.makeGem(AddonItems.CYAN_SBOPAL_GEM.get());
-        ModItemProperties.makeGem(AddonItems.PURPLE_SBOPAL_GEM.get());
-        ModItemProperties.makeGem(AddonItems.BLUE_SBOPAL_GEM.get());
-        ModItemProperties.makeGem(AddonItems.BROWN_SBOPAL_GEM.get());
-        ModItemProperties.makeGem(AddonItems.GREEN_SBOPAL_GEM.get());
-        ModItemProperties.makeGem(AddonItems.RED_SBOPAL_GEM.get());
-        ModItemProperties.makeGem(AddonItems.BLACK_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.COOBER_PEDY_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.SLOVAKIAN_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.PERUVIAN_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.ETHIOPIAN_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.FIRE_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.TANZANIAN_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.ROSE_WATER_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.MINTABIE_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.CRYSTAL_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.CONTRALUZ_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.MORADO_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.HARLEQUIN_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.BOULDER_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.ANDAMOOKA_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.CHERRY_SBOPAL_GEM.get());
+        ModItemProperties.makeGem(AddonItems.HONDURAN_SBOPAL_GEM.get());
         //Jade
         ModItemProperties.makeGem(AddonItems.WHITE_SBJADE_GEM.get());
         ModItemProperties.makeGem(AddonItems.ORANGE_SBJADE_GEM.get());

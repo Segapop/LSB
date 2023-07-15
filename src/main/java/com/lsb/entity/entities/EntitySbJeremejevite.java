@@ -226,6 +226,6 @@ public class EntitySbJeremejevite extends EntityGem {
 
     @Override
     public int exitHoleSize() {
-        return 2;
+        return 3;
     }
 }

@@ -62,7 +62,7 @@ public class EntitySbOpal extends EntityVaryingGem {
     @Override
     public SoundEvent getInstrument()
     {
-        return SoundEvents.NOTE_BLOCK_BASS.get();
+        return SoundEvents.NOTE_BLOCK_CHIME.get();
     }
 
     public static AttributeSupplier.Builder registerAttributes() {
@@ -120,7 +120,7 @@ public class EntitySbOpal extends EntityVaryingGem {
 
     @Override
     public int generateSkinVariant() {
-        return this.getOutfitVariant() == 3 ? 1 : 0;
+        return 0;
     }
 
     @Override
@@ -128,8 +128,6 @@ public class EntitySbOpal extends EntityVaryingGem {
         return new GemPlacements[]{
                 GemPlacements.TOP_OF_HEAD, GemPlacements.FOREHEAD, GemPlacements.BACK_OF_HEAD, GemPlacements.LEFT_EYE, GemPlacements.RIGHT_EYE, GemPlacements.NOSE,
                 GemPlacements.LEFT_CHEEK, GemPlacements.RIGHT_CHEEK, GemPlacements.LEFT_EAR, GemPlacements.RIGHT_EAR, GemPlacements.CHEST, GemPlacements.BACK, GemPlacements.BELLY,
-                GemPlacements.LEFT_SHOULDER, GemPlacements.RIGHT_SHOULDER, GemPlacements.LEFT_HAND, GemPlacements.RIGHT_HAND, GemPlacements.LEFT_PALM, GemPlacements.RIGHT_PALM,
-                GemPlacements.LEFT_THIGH, GemPlacements.RIGHT_THIGH, GemPlacements.LEFT_ANKLE, GemPlacements.RIGHT_ANKLE
         };
     }
 
@@ -138,12 +136,12 @@ public class EntitySbOpal extends EntityVaryingGem {
 
     @Override
     public int exitHoleSize() {
-        return 2;
+        return 3;
     }
 
     @Override
     public int generateOutfitVariant() {
-        return this.random.nextInt(9);
+        return this.random.nextInt(13);
     }
 
     @Override
@@ -167,7 +165,7 @@ public class EntitySbOpal extends EntityVaryingGem {
 
     @Override
     public boolean UsesUniqueNames() {
-        return false;
+        return true;
     }
 
     @Override
@@ -288,4 +286,18 @@ public class EntitySbOpal extends EntityVaryingGem {
         };
     }
 
+    @Override
+    public int generateWingVariant()  {
+        return this.random.nextInt(9);
+    }
+
+    @Override
+    public boolean hasMarkings() {
+        return true;
+    }
+
+    @Override
+    public boolean hasMarkings2() {
+        return true;
+    }
 }

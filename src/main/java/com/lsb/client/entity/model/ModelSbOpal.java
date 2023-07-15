@@ -69,7 +69,7 @@ public class ModelSbOpal<T extends EntityGem> extends ModelGem<T> {
 
 		PartDefinition hatmesh2 = hatbrim.addOrReplaceChild("hatmesh2", CubeListBuilder.create().texOffs(51, 66).mirror().addBox(-4.3F, -0.5F, -7.3F, 9.0F, 0.0F, 9.0F, new CubeDeformation(-2.5F, 0.0F, -2.5F)).mirror(false), PartPose.offsetAndRotation(-2.0F, 0.0F, -2.0F, 0.6981F, 0.7854F, 0.0F));
 
-		PartDefinition hairclip = head.addOrReplaceChild("hairclip", CubeListBuilder.create().texOffs(80, 63).mirror().addBox(1.5F, -5.5F, -0.8F, 5.0F, 5.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, -5.2F, -3.8F));
+		PartDefinition hairclip = head.addOrReplaceChild("hairclip", CubeListBuilder.create().texOffs(80, 63).mirror().addBox(1.5F, -5.5F, -0.8F, 5.0F, 5.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, -5.2F, -3.9F));
 
 		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(8, 17).addBox(-3.0F, -9.0F, -4.0F, 7.0F, 16.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(-0.5F, -1.0F, 1.5F));
 
@@ -91,9 +91,11 @@ public class ModelSbOpal<T extends EntityGem> extends ModelGem<T> {
 
 		PartDefinition shawl = body.addOrReplaceChild("shawl", CubeListBuilder.create().texOffs(42, 39).addBox(-6.0F, -9.5F, -3.0F, 13.0F, 8.0F, 6.0F, new CubeDeformation(0.5F)), PartPose.offset(0.0F, 0.5F, -1.5F));
 
+		PartDefinition skirttrain = body.addOrReplaceChild("skirttrain", CubeListBuilder.create().texOffs(53, 69).addBox(-25.0F, 0.0F, 0.0F, 25.0F, 0.0F, 25.0F, new CubeDeformation(0.0F)), PartPose.offset(13.0F, 24.9F, -14.0F));
+
 		PartDefinition armr = partdefinition.addOrReplaceChild("armr", CubeListBuilder.create().texOffs(0, 17).addBox(0.0F, -1.0F, -1.0F, 2.0F, 19.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-5.5F, -9.0F, 0.0F, 0.0F, 0.0F, 0.1222F));
 
-		PartDefinition armrside = armr.addOrReplaceChild("armrside", CubeListBuilder.create().texOffs(8, 38).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(3.0F, -1.0F, 0.0F));
+		PartDefinition armrside = armr.addOrReplaceChild("armrside", CubeListBuilder.create().texOffs(8, 38).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-1.0F, -1.0F, 0.0F));
 
 		PartDefinition armrflare = armr.addOrReplaceChild("armrflare", CubeListBuilder.create().texOffs(4, 55).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 3.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(1.0F, 13.0F, 0.0F));
 
@@ -101,7 +103,7 @@ public class ModelSbOpal<T extends EntityGem> extends ModelGem<T> {
 
 		PartDefinition arml = partdefinition.addOrReplaceChild("arml", CubeListBuilder.create().texOffs(32, 17).addBox(-2.0F, -1.0F, -1.0F, 2.0F, 19.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(5.5F, -9.0F, 0.0F, 0.0F, 0.0F, -0.1222F));
 
-		PartDefinition armlside = arml.addOrReplaceChild("armlside", CubeListBuilder.create().texOffs(24, 38).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, -1.0F, 0.0F));
+		PartDefinition armlside = arml.addOrReplaceChild("armlside", CubeListBuilder.create().texOffs(24, 38).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(1.0F, -1.0F, 0.0F));
 
 		PartDefinition armlflare = arml.addOrReplaceChild("armlflare", CubeListBuilder.create().texOffs(20, 55).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 3.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(-1.0F, 13.0F, 0.0F));
 
@@ -134,8 +136,8 @@ public class ModelSbOpal<T extends EntityGem> extends ModelGem<T> {
 
 	public void setupAnim(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netheadYaw, float headPitch) {
 		this.setRotateAngle(this.head, headPitch * 0.9F * 0.017453292F, netheadYaw * 0.017453292F, 0.0F);
-		this.setRotateAngle(this.arml, Mth.cos(limbSwing * 0.5F + 3.1415927F) * 1.5F * limbSwingAmount * 0.8F, 0.0F, 0.0F);
-		this.setRotateAngle(this.armr, Mth.cos(limbSwing * 0.5F) * 1.5F * limbSwingAmount * 0.8F, 0.0F, 0.0F);
+		this.setRotateAngle(this.arml, Mth.cos(limbSwing * 0.5F + 3.1415927F) * 1.5F * limbSwingAmount * 0.8F, 0.0F, -0.1745f);
+		this.setRotateAngle(this.armr, Mth.cos(limbSwing * 0.5F) * 1.5F * limbSwingAmount * 0.8F, 0.0F, 0.1745f);
 		this.setRotateAngle(this.legl, Mth.cos(limbSwing * 0.5F) * 1.5F * limbSwingAmount * 0.8F, 0.0F, 0.0F);
 		this.setRotateAngle(this.legr, Mth.cos(limbSwing * 0.5F + 3.1415927F) * 1.5F * limbSwingAmount * 0.8F, 0.0F, 0.0F);
 	}

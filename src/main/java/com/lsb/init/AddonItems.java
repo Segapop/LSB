@@ -45,37 +45,37 @@ public class AddonItems {
      public static final RegistryObject<Item> BLACK_SBMOISSANITE_GEM = ITEMS.register("sbmoissanite_gem_15", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
      //Opal
-     public static final RegistryObject<Item> WHITE_SBOPAL_GEM = ITEMS.register("sbopal_gem_0", () ->
+     public static final RegistryObject<Item> COOBER_PEDY_SBOPAL_GEM = ITEMS.register("sbopal_gem_0", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
-     public static final RegistryObject<Item> ORANGE_SBOPAL_GEM = ITEMS.register("sbopal_gem_1", () ->
+     public static final RegistryObject<Item> SLOVAKIAN_SBOPAL_GEM = ITEMS.register("sbopal_gem_1", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
-     public static final RegistryObject<Item> MAGENTA_SBOPAL_GEM = ITEMS.register("sbopal_gem_2", () ->
+     public static final RegistryObject<Item> PERUVIAN_SBOPAL_GEM = ITEMS.register("sbopal_gem_2", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
-     public static final RegistryObject<Item> LIGHT_BLUE_SBOPAL_GEM = ITEMS.register("sbopal_gem_3", () ->
+     public static final RegistryObject<Item> ETHIOPIAN_SBOPAL_GEM = ITEMS.register("sbopal_gem_3", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
-     public static final RegistryObject<Item> YELLOW_SBOPAL_GEM = ITEMS.register("sbopal_gem_4", () ->
+     public static final RegistryObject<Item> FIRE_SBOPAL_GEM = ITEMS.register("sbopal_gem_4", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
-     public static final RegistryObject<Item> LIME_SBOPAL_GEM = ITEMS.register("sbopal_gem_5", () ->
+     public static final RegistryObject<Item> TANZANIAN_SBOPAL_GEM = ITEMS.register("sbopal_gem_5", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
-     public static final RegistryObject<Item> PINK_SBOPAL_GEM = ITEMS.register("sbopal_gem_6", () ->
+     public static final RegistryObject<Item> ROSE_WATER_SBOPAL_GEM = ITEMS.register("sbopal_gem_6", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
-     public static final RegistryObject<Item> GRAY_SBOPAL_GEM = ITEMS.register("sbopal_gem_7", () ->
+     public static final RegistryObject<Item> MINTABIE_SBOPAL_GEM = ITEMS.register("sbopal_gem_7", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
-     public static final RegistryObject<Item> LIGHT_GRAY_SBOPAL_GEM = ITEMS.register("sbopal_gem_8", () ->
+     public static final RegistryObject<Item> CRYSTAL_SBOPAL_GEM = ITEMS.register("sbopal_gem_8", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
-     public static final RegistryObject<Item> CYAN_SBOPAL_GEM = ITEMS.register("sbopal_gem_9", () ->
+     public static final RegistryObject<Item> CONTRALUZ_SBOPAL_GEM = ITEMS.register("sbopal_gem_9", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
-     public static final RegistryObject<Item> PURPLE_SBOPAL_GEM = ITEMS.register("sbopal_gem_10", () ->
+     public static final RegistryObject<Item> MORADO_SBOPAL_GEM = ITEMS.register("sbopal_gem_10", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
-     public static final RegistryObject<Item> BLUE_SBOPAL_GEM = ITEMS.register("sbopal_gem_11", () ->
+     public static final RegistryObject<Item> HARLEQUIN_SBOPAL_GEM = ITEMS.register("sbopal_gem_11", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
-     public static final RegistryObject<Item> BROWN_SBOPAL_GEM = ITEMS.register("sbopal_gem_12", () ->
+     public static final RegistryObject<Item> BOULDER_SBOPAL_GEM = ITEMS.register("sbopal_gem_12", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
-     public static final RegistryObject<Item> GREEN_SBOPAL_GEM = ITEMS.register("sbopal_gem_13", () ->
+     public static final RegistryObject<Item> ANDAMOOKA_SBOPAL_GEM = ITEMS.register("sbopal_gem_13", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
-     public static final RegistryObject<Item> RED_SBOPAL_GEM = ITEMS.register("sbopal_gem_14", () ->
+     public static final RegistryObject<Item> CHERRY_SBOPAL_GEM = ITEMS.register("sbopal_gem_14", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
-     public static final RegistryObject<Item> BLACK_SBOPAL_GEM = ITEMS.register("sbopal_gem_15", () ->
+     public static final RegistryObject<Item> HONDURAN_SBOPAL_GEM = ITEMS.register("sbopal_gem_15", () ->
              new ItemGem(new Item.Properties(), lsb.MODID));
      //Jade
      public static final RegistryObject<Item> WHITE_SBJADE_GEM = ITEMS.register("sbjade_gem_0", () ->

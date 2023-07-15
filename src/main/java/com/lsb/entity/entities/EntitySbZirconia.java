@@ -9,6 +9,7 @@ import com.gempire.entities.other.EntityAbomination;
 import com.gempire.entities.other.EntityCrawler;
 import com.gempire.entities.other.EntityShambler;
 import com.gempire.util.GemPlacements;
+import com.lsb.entity.abilities.ComposerAbility;
 import com.lsb.entity.abilities.SupervisorAbility;
 import com.lsb.init.AddonItems;
 import com.lsb.lsb;
@@ -55,20 +56,20 @@ public class EntitySbZirconia extends EntityVaryingGem {
 
     @Override
     public boolean isPopular() {
-        return true;
+        return false;
     }
 
     @Override
     public SoundEvent getInstrument()
     {
-        return SoundEvents.NOTE_BLOCK_BASS.get();
+        return SoundEvents.NOTE_BLOCK_GUITAR.get();
     }
 
     public static AttributeSupplier.Builder registerAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 25.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.4D)
-                .add(Attributes.ATTACK_DAMAGE, 5.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.3D)
+                .add(Attributes.ATTACK_DAMAGE, 3.0D)
                 .add(Attributes.ATTACK_SPEED, 1.0D);
     }
 
@@ -109,7 +110,7 @@ public class EntitySbZirconia extends EntityVaryingGem {
     }
 
     public int generateHardness() {
-        return 9;
+        return 8;
     }
 
     @Override
@@ -133,11 +134,11 @@ public class EntitySbZirconia extends EntityVaryingGem {
     }
 
     @Override
-    public int generateHairVariant() { return this.random.nextInt(19); }
+    public int generateHairVariant() { return this.random.nextInt(10); }
 
     @Override
     public int exitHoleSize() {
-        return 2;
+        return 3;
     }
 
     @Override
@@ -147,11 +148,11 @@ public class EntitySbZirconia extends EntityVaryingGem {
 
     @Override
     public int generateInsigniaVariant() {
-        return this.getGemPlacement() != 17 ? this.getOutfitVariant() : 1;
+        return this.getOutfitVariant();
     }
 
     public int generateRebelInsigniaVariant() {
-        return this.getGemPlacement() != 17 ? this.getRebelOutfitVariant() : 1;
+        return this.getRebelOutfitVariant();
     }
 
     @Override
@@ -186,7 +187,7 @@ public class EntitySbZirconia extends EntityVaryingGem {
 
     @Override
     public byte EmotionThreshold() {
-        return 5;
+        return 3;
     }
 
     @Override
@@ -207,20 +208,18 @@ public class EntitySbZirconia extends EntityVaryingGem {
         arrayList.add(new AbilityPowerhouse());
         arrayList.add(new AbilityUnhinged());
         arrayList.add(new AbilityKnockback());
-        arrayList.add(new AbilityPyrokinesis());
-        arrayList.add(new AbilityCryokinesis());
         return arrayList;
     }
 
     public ArrayList<Ability> definiteAbilities() {
         ArrayList<Ability> arrayList = new ArrayList<>();
-        arrayList.add(new SupervisorAbility());
+        arrayList.add(new ComposerAbility());
         return arrayList;
     }
 
     @Override
     public int baseFocus() {
-        return 5;
+        return 4;
     }
 
     public boolean getIsCut()
@@ -230,13 +229,12 @@ public class EntitySbZirconia extends EntityVaryingGem {
 
     @Override
     public boolean hasOutfitPlacementVariant() {
-        return true;
+        return false;
     }
 
     @Override
     public int[] outfitPlacementVariants() {
         return new int[]{
-                17
         };
     }
 }

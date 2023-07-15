@@ -8,6 +8,7 @@ import com.gempire.entities.other.EntityAbomination;
 import com.gempire.entities.other.EntityCrawler;
 import com.gempire.entities.other.EntityShambler;
 import com.gempire.util.GemPlacements;
+import com.lsb.entity.abilities.ConductorAbility;
 import com.lsb.init.AddonItems;
 import com.lsb.lsb;
 import net.minecraft.sounds.SoundEvent;
@@ -35,9 +36,9 @@ public class EntitySbSilver extends EntityGem {
 
     public static AttributeSupplier.Builder registerAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 30.0D)
+                .add(Attributes.MAX_HEALTH, 10.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.4D)
-                .add(Attributes.ATTACK_DAMAGE, 3.0D)
+                .add(Attributes.ATTACK_DAMAGE, 1.0D)
                 .add(Attributes.ATTACK_SPEED, 1.0D);
     }
 
@@ -69,7 +70,7 @@ public class EntitySbSilver extends EntityGem {
 
     @Override
     public Float baseYScale() {
-        return .85F;
+        return .8F;
     }
 
     @Override
@@ -119,48 +120,45 @@ public class EntitySbSilver extends EntityGem {
     @Override
     public SoundEvent getInstrument()
     {
-        return SoundEvents.NOTE_BLOCK_GUITAR.get();
+        return SoundEvents.NOTE_BLOCK_BASEDRUM.get();
     }
     @Override
     public int generateHairVariant() {
-        return this.random.nextInt(3);
+        return this.random.nextInt(4);
     }
 
     @Override
     public int generateInsigniaColor() {
-        return 14;
+        return 7;
     }
 
     @Override
     public int generateOutfitColor() {
-        return 14;
+        return 0;
     }
 
     @Override
     public boolean hasOutfitPlacementVariant() {
-        return true;
+        return false;
     }
 
     @Override
     public int[] outfitPlacementVariants() {
         return new int[]{
-                11, 17
         };
     }
 
     public ArrayList<Ability> possibleAbilities(){
         ArrayList<Ability> arrayList = new ArrayList<>();
         arrayList.add(new AbilityZilch());
-        arrayList.add(new AbilityTank());
-        arrayList.add(new AbilityBeefcake());
-        arrayList.add(new AbilityPowerhouse());
         arrayList.add(new AbilityUnhinged());
         arrayList.add(new AbilityKnockback());
-        arrayList.add(new AbilityArcher());
+
         return arrayList;
     }
     public ArrayList<Ability> definiteAbilities(){
         ArrayList<Ability> arrayList = new ArrayList<>();
+        arrayList.add(new ConductorAbility());
         return arrayList;
     }
 
@@ -175,7 +173,7 @@ public class EntitySbSilver extends EntityGem {
 
     @Override
     public byte EmotionThreshold() {
-        return 5;
+        return 10;
     }
 
     public boolean canChangeUniformColorByDefault() {
@@ -188,39 +186,25 @@ public class EntitySbSilver extends EntityGem {
 
     @Override
     public boolean fireImmune(){
-        return true;
+        return false;
     }
 
     public boolean hasSkinColorVariant(){
         return false;
     }
 
+    @Override
     public int generateOutfitVariant() {
-        if (getGemPlacement() == 11)
-            return 11;
-        else if (getGemPlacement() == 17)
-            return 17;
-        return this.random.nextInt(7);
+        return this.random.nextInt(1);
     }
 
-    public int generateInsigniaVariant(){
-        if (this.getGemPlacement() == 11) {
-            return this.getGemPlacement() != 11 ? this.getOutfitVariant() : 11;
-        } else if (this.getGemPlacement() == 17) {
-            return this.getGemPlacement() != 17 ? this.getOutfitVariant() : 17;
-        } else {
-            return this.getOutfitVariant();
-        }
+    @Override
+    public int generateInsigniaVariant() {
+        return this.getOutfitVariant();
     }
 
-    public int generateRebelInsigniaVariant(){
-        if (this.getGemPlacement() == 11) {
-            return this.getGemPlacement() != 11 ? this.getRebelOutfitVariant() : 11;
-        } else if (this.getGemPlacement() == 17) {
-            return this.getGemPlacement() != 17 ? this.getRebelOutfitVariant() : 17;
-        } else {
-            return this.getRebelOutfitVariant();
-        }
+    public int generateRebelInsigniaVariant() {
+        return this.getRebelOutfitVariant();
     }
 
     @Override
@@ -232,11 +216,11 @@ public class EntitySbSilver extends EntityGem {
 
     @Override
     public int baseFocus() {
-        return 7;
+        return 6;
     }
 
     public int generateHardness() {
-        return 9;
+        return 2;
     }
 
 

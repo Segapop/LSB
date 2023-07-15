@@ -162,7 +162,7 @@ public class EntitySbGold extends EntityVaryingGem {
 
     @Override
     public int generateOutfitVariant() {
-        return this.random.nextInt(1);
+        return this.random.nextInt(5);
     }
 
     @Override

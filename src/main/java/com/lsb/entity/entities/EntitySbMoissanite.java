@@ -140,7 +140,7 @@ public class EntitySbMoissanite extends EntityVaryingGem {
 
     @Override
     public int exitHoleSize() {
-        return 2;
+        return 3;
     }
 
     @Override
