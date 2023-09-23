@@ -4,7 +4,6 @@ import com.gempire.entities.abilities.*;
 import com.gempire.entities.abilities.base.Ability;
 import com.gempire.entities.ai.*;
 import com.gempire.entities.bases.EntityGem;
-import com.gempire.entities.bases.EntityVaryingGem;
 import com.gempire.entities.other.EntityAbomination;
 import com.gempire.entities.other.EntityCrawler;
 import com.gempire.entities.other.EntityShambler;
@@ -27,18 +26,20 @@ import net.minecraft.world.level.Level;
 
 import java.util.ArrayList;
 
-public class EntitySbJade extends EntityVaryingGem {
+public class EntitySbPentagonite extends EntityGem {
 
-    //This gem was copied from topaz
-    public EntitySbJade(EntityType<? extends PathfinderMob> type, Level worldIn) {
+    //this gem was copied from ruby
+
+    public EntitySbPentagonite(EntityType<? extends PathfinderMob> type, Level worldIn) {
         super(type, worldIn);
     }
 
-    @Override
-    public int[] NeglectedColors() {
-        return new int[] {
-                17,16
-        };
+    public static AttributeSupplier.Builder registerAttributes() {
+        return Mob.createMobAttributes()
+                .add(Attributes.MAX_HEALTH, 25.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.3D)
+                .add(Attributes.ATTACK_DAMAGE, 3.0D)
+                .add(Attributes.ATTACK_SPEED, 1.0D);
     }
 
     @Override
@@ -53,23 +54,25 @@ public class EntitySbJade extends EntityVaryingGem {
         return AddonItems.class;
     }
 
-    @Override
-    public boolean isPopular() {
-        return true;
+    public boolean flocksTo(EntityGem gem) {
+        //the flocksTo method defines what gems flock to when on wander
+        //the isPopular method can be defined by your gem (shown in EntityVaryingTest)
+        return gem.isPopular();
     }
 
     @Override
-    public SoundEvent getInstrument()
-    {
-        return SoundEvents.NOTE_BLOCK_FLUTE.get();
+    public Float baseXScale() {
+        return 1.1F;
     }
 
-    public static AttributeSupplier.Builder registerAttributes() {
-        return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 30.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.2D)
-                .add(Attributes.ATTACK_DAMAGE, 1.0D)
-                .add(Attributes.ATTACK_SPEED, 1.0D);
+    @Override
+    public Float baseYScale() {
+        return 1.1F;
+    }
+
+    @Override
+    public Float baseZScale() {
+        return 1.1F;
     }
 
     @Override
@@ -94,30 +97,6 @@ public class EntitySbJade extends EntityVaryingGem {
     }
 
     @Override
-    public Float baseXScale() {
-        return 1.0F;
-    }
-
-    @Override
-    public Float baseYScale() {
-        return 1.0F;
-    }
-
-    @Override
-    public Float baseZScale() {
-        return 1.0F;
-    }
-
-    public int generateHardness() {
-        return 7;
-    }
-
-    @Override
-    public int getColor() {
-        return 0;
-    }
-
-    @Override
     public int generateSkinVariant() {
         return 0;
     }
@@ -125,23 +104,95 @@ public class EntitySbJade extends EntityVaryingGem {
     @Override
     public GemPlacements[] getPlacements() {
         return new GemPlacements[]{
-                GemPlacements.FOREHEAD, GemPlacements.LEFT_EYE, GemPlacements.RIGHT_EYE, GemPlacements.NOSE,
-                GemPlacements.LEFT_CHEEK, GemPlacements.RIGHT_CHEEK, GemPlacements.CHEST, GemPlacements.BACK, GemPlacements.BELLY,
-                GemPlacements.LEFT_SHOULDER, GemPlacements.RIGHT_SHOULDER, GemPlacements.LEFT_HAND, GemPlacements.RIGHT_HAND, GemPlacements.LEFT_PALM, GemPlacements.RIGHT_PALM
+                GemPlacements.TOP_OF_HEAD, GemPlacements.FOREHEAD, GemPlacements.BACK_OF_HEAD, GemPlacements.LEFT_EYE, GemPlacements.RIGHT_EYE, GemPlacements.NOSE,
+                GemPlacements.LEFT_CHEEK, GemPlacements.RIGHT_CHEEK, GemPlacements.LEFT_EAR, GemPlacements.RIGHT_EAR, GemPlacements.CHEST, GemPlacements.BACK, GemPlacements.BELLY,
+                GemPlacements.LEFT_SHOULDER, GemPlacements.RIGHT_SHOULDER, GemPlacements.LEFT_HAND, GemPlacements.RIGHT_HAND, GemPlacements.LEFT_PALM, GemPlacements.RIGHT_PALM,
+                GemPlacements.LEFT_THIGH, GemPlacements.RIGHT_THIGH, GemPlacements.LEFT_ANKLE, GemPlacements.RIGHT_ANKLE
         };
     }
 
     @Override
-    public int generateHairVariant() { return this.random.nextInt(11); }
+    public SoundEvent getInstrument()
+    {
+        return SoundEvents.NOTE_BLOCK_PLING.get();
+    }
+    @Override
+    public int generateHairVariant() {
+        return this.random.nextInt(10);
+    }
 
     @Override
-    public int exitHoleSize() {
-        return 2;
+    public int generateInsigniaColor() {
+        return 11;
+    }
+
+    @Override
+    public int generateOutfitColor() {
+        return 11;
+    }
+
+    @Override
+    public boolean hasOutfitPlacementVariant() {
+        return false;
+    }
+
+    @Override
+    public int[] outfitPlacementVariants() {
+        return new int[]{
+        };
+    }
+
+    public ArrayList<Ability> possibleAbilities(){
+        ArrayList<Ability> arrayList = new ArrayList<>();
+        arrayList.add(new AbilityZilch());
+        arrayList.add(new AbilityTank());
+        arrayList.add(new AbilityCryokinesis());
+        arrayList.add(new AbilityPowerhouse());
+        arrayList.add(new AbilityUnhinged());
+        arrayList.add(new AbilityKnockback());
+        arrayList.add(new AbilityHydrokinesis());
+        return arrayList;
+    }
+    public ArrayList<Ability> definiteAbilities(){
+        ArrayList<Ability> arrayList = new ArrayList<>();
+        arrayList.add(new DancerAbility());
+        return arrayList;
+    }
+
+    public int generateSkinColorVariant() {
+        return 0;
+    }
+
+    @Override
+    public boolean generateIsEmotional() {
+        return true;
+    }
+
+    @Override
+    public byte EmotionThreshold() {
+        return 5;
+    }
+
+    public boolean canChangeUniformColorByDefault() {
+        return true;
+    }
+
+    public boolean canChangeInsigniaColorByDefault(){
+        return true;
+    }
+
+    @Override
+    public boolean fireImmune(){
+        return false;
+    }
+
+    public boolean hasSkinColorVariant(){
+        return false;
     }
 
     @Override
     public int generateOutfitVariant() {
-        return this.random.nextInt(13);
+        return this.random.nextInt(1);
     }
 
     @Override
@@ -159,79 +210,21 @@ public class EntitySbJade extends EntityVaryingGem {
     }
 
     @Override
-    public int generateSkinColorVariant() {
-        return this.random.nextInt(1);
-    }
-
-    @Override
-    public boolean UsesUniqueNames() {
-        return false;
-    }
-
-    @Override
-    public String NameFromColor(byte i) {
-        return null;
-    }
-
-    @Override
-    public boolean hasSkinColorVariant() {
-        return true;
-    }
-
-    @Override
-    public boolean generateIsEmotional() {
-        return true;
-    }
-
-    @Override
-    public byte EmotionThreshold() {
-        return 5;
-    }
-
-    @Override
-    public boolean canChangeUniformColorByDefault() {
-        return true;
-    }
-
-    @Override
-    public boolean canChangeInsigniaColorByDefault() {
-        return true;
-    }
-
-    public ArrayList<Ability> possibleAbilities() {
-        ArrayList<Ability> arrayList = new ArrayList<>();
-        arrayList.add(new AbilityZilch());
-        arrayList.add(new AbilityBeefcake());
-        arrayList.add(new AbilityUnhinged());
-        arrayList.add(new AbilityKnockback());
-        arrayList.add(new AbilityTank());
-        return arrayList;
-    }
-
-    public ArrayList<Ability> definiteAbilities() {
-        ArrayList<Ability> arrayList = new ArrayList<>();
-        arrayList.add(new DancerAbility());
-        return arrayList;
-    }
-
-    @Override
     public int baseFocus() {
-        return 5;
+        return 7;
     }
 
-    public boolean getIsCut()
-    {
-        return false;
-    }
-
-    @Override
-    public boolean hasOutfitPlacementVariant() {
-        return false;
+    public int generateHardness() {
+        return 6;
     }
 
     @Override
-    public int[] outfitPlacementVariants() {
-        return new int[]{
-        };
+    public int getColor() {
+        return 14;
+    }
+
+    @Override
+    public int exitHoleSize() {
+        return 3;
     }
 }

@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "lsb:item/moissanite_gem_14",
-    "layer1": "gempire:item/cracks/special_gem_crack"
-  }
-}

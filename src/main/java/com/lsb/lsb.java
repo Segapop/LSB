@@ -43,17 +43,8 @@ public class lsb
 
     public void EntityAttributes(final EntityAttributeCreationEvent event) {
         //register entity attributes, these are set in the EntityTestGem class
-        event.put(AddonEntities.SBMOISSANITE.get(), EntitySbMoissanite.registerAttributes().build());
-        event.put(AddonEntities.SBOPAL.get(), EntitySbOpal.registerAttributes().build());
         event.put(AddonEntities.SBJADE.get(), EntitySbJade.registerAttributes().build());
-        event.put(AddonEntities.SBMOONSTONE.get(), EntitySbMoonstone.registerAttributes().build());
-        event.put(AddonEntities.SBGOLD.get(), EntitySbGold.registerAttributes().build());
-        event.put(AddonEntities.SBPYRITE.get(), EntitySbPyrite.registerAttributes().build());
-        event.put(AddonEntities.SBPLATINUM.get(), EntitySbPlatinum.registerAttributes().build());
-        event.put(AddonEntities.SBCOPPER.get(), EntitySbCopper.registerAttributes().build());
-        event.put(AddonEntities.SBSILVER.get(), EntitySbSilver.registerAttributes().build());
-        event.put(AddonEntities.SBJEREMEJEVITE.get(), EntitySbJeremejevite.registerAttributes().build());
-        event.put(AddonEntities.SBZIRCONIA.get(), EntitySbZirconia.registerAttributes().build());
+        event.put(AddonEntities.SBPENTAGONITE.get(), EntitySbJade.registerAttributes().build());
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
