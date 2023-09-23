@@ -4,11 +4,13 @@ import com.gempire.entities.abilities.*;
 import com.gempire.entities.abilities.base.Ability;
 import com.gempire.entities.ai.*;
 import com.gempire.entities.bases.EntityGem;
+import com.gempire.entities.bases.EntityVaryingGem;
 import com.gempire.entities.other.EntityAbomination;
 import com.gempire.entities.other.EntityCrawler;
 import com.gempire.entities.other.EntityShambler;
 import com.gempire.util.GemPlacements;
-import com.lsb.entity.abilities.DancerAbility;
+import com.lsb.entity.abilities.ModelAbility;
+import com.lsb.entity.abilities.SupervisorAbility;
 import com.lsb.init.AddonItems;
 import com.lsb.lsb;
 import net.minecraft.sounds.SoundEvent;
@@ -26,20 +28,18 @@ import net.minecraft.world.level.Level;
 
 import java.util.ArrayList;
 
-public class EntitySbPentagonite extends EntityGem {
+public class EntitySbOpal extends EntityVaryingGem {
 
-    //this gem was copied from ruby
-
-    public EntitySbPentagonite(EntityType<? extends PathfinderMob> type, Level worldIn) {
+    //This gem was copied from topaz
+    public EntitySbOpal(EntityType<? extends PathfinderMob> type, Level worldIn) {
         super(type, worldIn);
     }
 
-    public static AttributeSupplier.Builder registerAttributes() {
-        return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 25.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.3D)
-                .add(Attributes.ATTACK_DAMAGE, 3.0D)
-                .add(Attributes.ATTACK_SPEED, 1.0D);
+    @Override
+    public int[] NeglectedColors() {
+        return new int[] {
+                17,16
+        };
     }
 
     @Override
@@ -54,25 +54,23 @@ public class EntitySbPentagonite extends EntityGem {
         return AddonItems.class;
     }
 
-    public boolean flocksTo(EntityGem gem) {
-        //the flocksTo method defines what gems flock to when on wander
-        //the isPopular method can be defined by your gem (shown in EntityVaryingTest)
-        return gem.isPopular();
+    @Override
+    public boolean isPopular() {
+        return true;
     }
 
     @Override
-    public Float baseXScale() {
-        return 1.1F;
+    public SoundEvent getInstrument()
+    {
+        return SoundEvents.NOTE_BLOCK_CHIME.get();
     }
 
-    @Override
-    public Float baseYScale() {
-        return 1.1F;
-    }
-
-    @Override
-    public Float baseZScale() {
-        return 1.1F;
+    public static AttributeSupplier.Builder registerAttributes() {
+        return Mob.createMobAttributes()
+                .add(Attributes.MAX_HEALTH, 15.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.4D)
+                .add(Attributes.ATTACK_DAMAGE, 1.0D)
+                .add(Attributes.ATTACK_SPEED, 1.0D);
     }
 
     @Override
@@ -97,6 +95,30 @@ public class EntitySbPentagonite extends EntityGem {
     }
 
     @Override
+    public Float baseXScale() {
+        return .85F;
+    }
+
+    @Override
+    public Float baseYScale() {
+        return .9F;
+    }
+
+    @Override
+    public Float baseZScale() {
+        return .85F;
+    }
+
+    public int generateHardness() {
+        return 5;
+    }
+
+    @Override
+    public int getColor() {
+        return 0;
+    }
+
+    @Override
     public int generateSkinVariant() {
         return 0;
     }
@@ -106,93 +128,20 @@ public class EntitySbPentagonite extends EntityGem {
         return new GemPlacements[]{
                 GemPlacements.TOP_OF_HEAD, GemPlacements.FOREHEAD, GemPlacements.BACK_OF_HEAD, GemPlacements.LEFT_EYE, GemPlacements.RIGHT_EYE, GemPlacements.NOSE,
                 GemPlacements.LEFT_CHEEK, GemPlacements.RIGHT_CHEEK, GemPlacements.LEFT_EAR, GemPlacements.RIGHT_EAR, GemPlacements.CHEST, GemPlacements.BACK, GemPlacements.BELLY,
-                GemPlacements.LEFT_SHOULDER, GemPlacements.RIGHT_SHOULDER, GemPlacements.LEFT_HAND, GemPlacements.RIGHT_HAND, GemPlacements.LEFT_PALM, GemPlacements.RIGHT_PALM,
-                GemPlacements.LEFT_THIGH, GemPlacements.RIGHT_THIGH, GemPlacements.LEFT_ANKLE, GemPlacements.RIGHT_ANKLE
         };
     }
 
     @Override
-    public SoundEvent getInstrument()
-    {
-        return SoundEvents.NOTE_BLOCK_PLING.get();
-    }
-    @Override
-    public int generateHairVariant() {
-        return this.random.nextInt(10);
-    }
+    public int generateHairVariant() { return this.random.nextInt(7); }
 
     @Override
-    public int generateInsigniaColor() {
-        return 11;
-    }
-
-    @Override
-    public int generateOutfitColor() {
-        return 11;
-    }
-
-    @Override
-    public boolean hasOutfitPlacementVariant() {
-        return false;
-    }
-
-    @Override
-    public int[] outfitPlacementVariants() {
-        return new int[]{
-        };
-    }
-
-    public ArrayList<Ability> possibleAbilities(){
-        ArrayList<Ability> arrayList = new ArrayList<>();
-        arrayList.add(new AbilityZilch());
-        arrayList.add(new AbilityTank());
-        arrayList.add(new AbilityCryokinesis());
-        arrayList.add(new AbilityPowerhouse());
-        arrayList.add(new AbilityUnhinged());
-        arrayList.add(new AbilityKnockback());
-        arrayList.add(new AbilityHydrokinesis());
-        return arrayList;
-    }
-    public ArrayList<Ability> definiteAbilities(){
-        ArrayList<Ability> arrayList = new ArrayList<>();
-        arrayList.add(new DancerAbility());
-        return arrayList;
-    }
-
-    public int generateSkinColorVariant() {
-        return 0;
-    }
-
-    @Override
-    public boolean generateIsEmotional() {
-        return true;
-    }
-
-    @Override
-    public byte EmotionThreshold() {
-        return 5;
-    }
-
-    public boolean canChangeUniformColorByDefault() {
-        return true;
-    }
-
-    public boolean canChangeInsigniaColorByDefault(){
-        return true;
-    }
-
-    @Override
-    public boolean fireImmune(){
-        return false;
-    }
-
-    public boolean hasSkinColorVariant(){
-        return false;
+    public int exitHoleSize() {
+        return 3;
     }
 
     @Override
     public int generateOutfitVariant() {
-        return this.random.nextInt(1);
+        return this.random.nextInt(13);
     }
 
     @Override
@@ -210,21 +159,150 @@ public class EntitySbPentagonite extends EntityGem {
     }
 
     @Override
+    public int generateSkinColorVariant() {
+        return this.random.nextInt(1);
+    }
+
+    @Override
+    public boolean UsesUniqueNames() {
+        return true;
+    }
+
+    @Override
+    public String NameFromColor(byte i) {
+        String name = "";
+        switch(i){
+            case 1:
+                name = "slovakian";
+                break;
+            case 2:
+                name = "peruvian";
+                break;
+            case 3:
+                name = "ethiopian";
+                break;
+            case 4:
+                name = "fire";
+                break;
+            case 5:
+                name = "tanzanian";
+                break;
+            case 6:
+                name = "rose_water";
+                break;
+            case 7:
+                name = "mintabie";
+                break;
+            case 8:
+                name = "crystal";
+                break;
+            case 9:
+                name = "contraluz";
+                break;
+            case 10:
+                name = "morado";
+                break;
+            case 11:
+                name = "harlequin";
+                break;
+            case 12:
+                name = "boulder";
+                break;
+            case 13:
+                name = "andamooka";
+                break;
+            case 14:
+                name = "cherry";
+                break;
+            case 15:
+                name = "honduran";
+                break;
+            default:
+                name = "coober_pedy";
+                break;
+        }
+        return name;
+    }
+
+    @Override
+    public boolean hasSkinColorVariant() {
+        return true;
+    }
+
+    @Override
+    public boolean generateIsEmotional() {
+        return true;
+    }
+
+    @Override
+    public byte EmotionThreshold() {
+        return 4;
+    }
+
+    @Override
+    public boolean canChangeUniformColorByDefault() {
+        return true;
+    }
+
+    @Override
+    public boolean canChangeInsigniaColorByDefault() {
+        return true;
+    }
+
+    public ArrayList<Ability> possibleAbilities() {
+        ArrayList<Ability> arrayList = new ArrayList<>();
+        arrayList.add(new AbilityZilch());
+        arrayList.add(new AbilityTank());
+        arrayList.add(new AbilityBeefcake());
+        arrayList.add(new AbilityUnhinged());
+        arrayList.add(new AbilityAerokinesis());
+        return arrayList;
+    }
+
+    public ArrayList<Ability> definiteAbilities() {
+        ArrayList<Ability> arrayList = new ArrayList<>();
+        arrayList.add(new ModelAbility());
+        return arrayList;
+    }
+
+    @Override
     public int baseFocus() {
-        return 7;
-    }
-
-    public int generateHardness() {
-        return 6;
-    }
-
-    @Override
-    public int getColor() {
-        return 14;
-    }
-
-    @Override
-    public int exitHoleSize() {
         return 3;
+    }
+
+    public boolean getIsCut()
+    {
+        return false;
+    }
+
+    @Override
+    public boolean hasOutfitPlacementVariant() {
+        return false;
+    }
+
+    @Override
+    public int[] outfitPlacementVariants() {
+        return new int[]{
+        };
+    }
+
+    @Override
+    public boolean hasWings() {
+        return true;
+    }
+
+    @Override
+    public int generateWingVariant()  {
+        return this.random.nextInt(9);
+    }
+
+    @Override
+    public boolean hasMarkings() {
+        return true;
+    }
+
+    @Override
+    public boolean hasMarkings2() {
+        return true;
     }
 }

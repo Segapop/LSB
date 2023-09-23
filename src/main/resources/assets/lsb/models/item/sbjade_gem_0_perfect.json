@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "lsb:item/jade_gem_0",
-    "layer1": "gempire:item/perfect/perfect"
-  }
-}
