@@ -6,7 +6,8 @@ import com.gempire.init.ModAbilities;
 public class AddonAbilities {
     public static void registerAbilities() {
         ModAbilities.abilities.add(new SupervisorAbility());
-        ModAbilities.abilities.add(new ModelAbility());;
+        ModAbilities.abilities.add(new ModelAbility());
+        ModAbilities.abilities.add(new PlacehodlAbility());;
         ModAbilities.abilities.add(new NightAbility());
         ModAbilities.abilities.add(new SingerAbility());
         ModAbilities.abilities.add(new WranglerAbility());

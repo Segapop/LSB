@@ -9,7 +9,6 @@ import com.gempire.entities.other.EntityCrawler;
 import com.gempire.entities.other.EntityShambler;
 import com.gempire.util.GemPlacements;
 import com.lsb.entity.abilities.AcrobatAbility;
-import com.lsb.entity.abilities.DancerAbility;
 import com.lsb.init.AddonItems;
 import com.lsb.lsb;
 import net.minecraft.sounds.SoundEvent;

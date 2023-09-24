@@ -135,7 +135,7 @@ public class EntitySbCalcite extends EntityVaryingGem {
     }
 
     @Override
-    public int generateHairVariant() { return this.random.nextInt(5); }
+    public int generateHairVariant() { return this.random.nextInt(6); }
 
     @Override
     public int exitHoleSize() {
