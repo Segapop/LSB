@@ -1,0 +1,26 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "lsb:item/opal_gem_7"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "gempire:gempredicate": 0.1
+      },
+      "model": "lsb:item/sbopal_gem_7_sludge"
+    },
+    {
+      "predicate": {
+        "gempire:gempredicate": 0.2
+      },
+      "model": "lsb:item/sbopal_gem_7_cracked"
+    },
+    {
+      "predicate": {
+        "gempire:gempredicate": 1.0
+      },
+      "model": "lsb:item/sbopal_gem_7_perfect"
+    }
+  ]
+}
