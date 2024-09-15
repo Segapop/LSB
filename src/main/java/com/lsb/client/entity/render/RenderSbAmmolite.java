@@ -1,7 +1,7 @@
 package com.lsb.client.entity.render;
 
-import com.gempire.client.entity.model.ModelNephrite;
 import com.gempire.client.entity.render.layers.*;
+import com.lsb.client.entity.model.ModelSbAmmolite;
 import com.lsb.entity.entities.EntitySbAmmolite;
 import com.lsb.lsb;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -12,12 +12,14 @@ import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
-public class RenderSbAmmolite extends MobRenderer<EntitySbAmmolite, ModelNephrite<EntitySbAmmolite>> {
+public class RenderSbAmmolite extends MobRenderer<EntitySbAmmolite, ModelSbAmmolite<EntitySbAmmolite>> {
 
-    public RenderSbAmmolite(EntityRendererProvider.Context renderManagerIn, ModelNephrite<EntitySbAmmolite> baseModel) {
+    public RenderSbAmmolite(EntityRendererProvider.Context renderManagerIn, ModelSbAmmolite<EntitySbAmmolite> baseModel) {
         super(renderManagerIn, baseModel, .25f);
         this.addLayer(new SkinLayer(this));
         this.addLayer(new FaceLayer(this));
+        this.addLayer(new MarkingLayer(this));
+        this.addLayer(new WingLayer(this));
         this.addLayer(new OutfitLayer(this));
         this.addLayer(new InsigniaLayer(this));
         this.addLayer(new HairLayer(this));

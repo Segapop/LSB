@@ -9,6 +9,7 @@ import com.gempire.entities.other.EntityCrawler;
 import com.gempire.entities.other.EntityShambler;
 import com.gempire.util.GemPlacements;
 import com.lsb.entity.abilities.AcrobatAbility;
+import com.lsb.entity.abilities.PlacehodlAbility;
 import com.lsb.init.AddonItems;
 import com.lsb.lsb;
 import net.minecraft.sounds.SoundEvent;
@@ -62,17 +63,17 @@ public class EntitySbAmmolite extends EntityGem {
 
     @Override
     public Float baseXScale() {
-        return 1.1F;
+        return 0.9F;
     }
 
     @Override
     public Float baseYScale() {
-        return 1.1F;
+        return 0.9F;
     }
 
     @Override
     public Float baseZScale() {
-        return 1.1F;
+        return 0.9F;
     }
 
     @Override
@@ -102,6 +103,26 @@ public class EntitySbAmmolite extends EntityGem {
     }
 
     @Override
+    public boolean hasWings() {
+        return true;
+    }
+
+    @Override
+    public int generateWingVariant()  {
+        return this.random.nextInt(1);
+    }
+
+    @Override
+    public boolean hasMarkings() {
+        return true;
+    }
+
+    @Override
+    public boolean hasMarkings2() {
+        return true;
+    }
+
+    @Override
     public GemPlacements[] getPlacements() {
         return new GemPlacements[]{
                 GemPlacements.TOP_OF_HEAD, GemPlacements.FOREHEAD, GemPlacements.BACK_OF_HEAD, GemPlacements.LEFT_EYE, GemPlacements.RIGHT_EYE, GemPlacements.NOSE,
@@ -118,17 +139,17 @@ public class EntitySbAmmolite extends EntityGem {
     }
     @Override
     public int generateHairVariant() {
-        return this.random.nextInt(10);
+        return this.random.nextInt(5);
     }
 
     @Override
     public int generateInsigniaColor() {
-        return 11;
+        return this.random.nextInt(16);
     }
 
     @Override
     public int generateOutfitColor() {
-        return 11;
+        return this.random.nextInt(16);
     }
 
     @Override
@@ -155,7 +176,7 @@ public class EntitySbAmmolite extends EntityGem {
     }
     public ArrayList<Ability> definiteAbilities(){
         ArrayList<Ability> arrayList = new ArrayList<>();
-        arrayList.add(new AcrobatAbility());
+        arrayList.add(new PlacehodlAbility());
         return arrayList;
     }
 

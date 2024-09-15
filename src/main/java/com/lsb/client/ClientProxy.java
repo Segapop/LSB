@@ -33,7 +33,7 @@ public class ClientProxy {
             event.registerEntityRenderer(AddonEntities.SBSILVER.get(), m -> new RenderSbSilver(m, new ModelSbSilver<>(m.bakeLayer(ModelSbSilver.LAYER_LOCATION))));
             event.registerEntityRenderer(AddonEntities.SBJEREMEJEVITE.get(), m -> new RenderSbJeremejevite(m, new ModelSbJeremejevite<>(m.bakeLayer(ModelSbJeremejevite.LAYER_LOCATION))));
             event.registerEntityRenderer(AddonEntities.SBZIRCONIA.get(), m -> new RenderSbZirconia(m, new ModelNephrite<>(m.bakeLayer(ModelNephrite.LAYER_LOCATION))));
-            event.registerEntityRenderer(AddonEntities.SBAMMOLITE.get(), m -> new RenderSbAmmolite(m, new ModelNephrite<>(m.bakeLayer(ModelNephrite.LAYER_LOCATION))));
+            event.registerEntityRenderer(AddonEntities.SBAMMOLITE.get(), m -> new RenderSbAmmolite(m, new ModelSbAmmolite<>(m.bakeLayer(ModelSbAmmolite.LAYER_LOCATION))));
             event.registerEntityRenderer(AddonEntities.SBCALCITE.get(), m -> new RenderSbCalcite(m, new ModelQuartz<>(m.bakeLayer(ModelQuartz.LAYER_LOCATION_Q))));
             event.registerEntityRenderer(AddonEntities.SBHOLTITE.get(), m -> new RenderSbHoltite(m, new ModelNephrite<>(m.bakeLayer(ModelNephrite.LAYER_LOCATION))));
             event.registerEntityRenderer(AddonEntities.SBCUPRITE.get(), m -> new RenderSbCuprite(m, new ModelNephrite<>(m.bakeLayer(ModelNephrite.LAYER_LOCATION))));
@@ -56,7 +56,7 @@ public class ClientProxy {
             event.registerLayerDefinition(ModelSbCopper.LAYER_LOCATION, ModelSbCopper::createBodyLayer);
             event.registerLayerDefinition(ModelSbSilver.LAYER_LOCATION, ModelSbSilver::createBodyLayer);
             event.registerLayerDefinition(ModelSbJeremejevite.LAYER_LOCATION, ModelSbJeremejevite::createBodyLayer);
-            //event.registerLayerDefinition(ModelSbAmmolite.LAYER_LOCATION, ModelSbAmmolite::createBodyLayer);
+            event.registerLayerDefinition(ModelSbAmmolite.LAYER_LOCATION, ModelSbAmmolite::createBodyLayer);
             //event.registerLayerDefinition(ModelSbHoltite.LAYER_LOCATION, ModelSbHoltite::createBodyLayer);
             //event.registerLayerDefinition(ModelSbCuprite.LAYER_LOCATION, ModelSbCuprite::createBodyLayer);
         }

@@ -22,7 +22,10 @@ public class PlacehodlAbility extends Ability implements IIdleAbility {
 
     @Override
     public void execute() {
-        // Will spin in circles and generate XP if music is playing
+        // "hue shifts" when experiencing certain emotions
+        //(marking layer unhides when close to rebelling, wing layer unhides when about to outburst, ect)
+        //when targeting something she goes invisible and "sneaks" up to it (just moves slower than normal)
+        //maybe emits particles so she can be found
 
     }
 }

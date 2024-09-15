@@ -18,7 +18,6 @@ public class AddonAbilities {
         ModAbilities.abilities.add(new AcrobatAbility());
         ModAbilities.abilities.add(new ComposerAbility());
         ModAbilities.abilities.add(new EscortAbility());
-
         ModAbilities.abilities.add(new HerderAbility());
         ModAbilities.abilities.add(new DayAbility());
     }
